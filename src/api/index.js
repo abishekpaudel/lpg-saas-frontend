@@ -93,3 +93,19 @@ export const userAPI = {
 };
 
 export default api;
+
+// ── Blog ──────────────────────────────────────────────────────────────────────
+export const blogAPI = {
+  getPublished:   (params) => api.get('/blogs', { params }),
+  getBySlug:      (slug)   => api.get(`/blogs/${slug}`),
+  getCategories:  ()       => api.get('/blogs/categories'),
+  adminGetAll:    (params) => api.get('/blogs/admin/all', { params }),
+  create:         (data)   => api.post('/blogs', data),
+  update:         (id, data) => api.put(`/blogs/${id}`, data),
+  remove:         (id)     => api.delete(`/blogs/${id}`),
+  togglePublish:  (id)     => api.patch(`/blogs/${id}/toggle-publish`),
+};
+
+export const adminAPI = {
+  createSupplier: (data) => api.post('/auth/create-supplier', data),
+};

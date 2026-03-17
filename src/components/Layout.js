@@ -3,9 +3,9 @@ import Sidebar from './Sidebar';
 
 export default function Layout({ children }) {
   return (
-    <div className="app-shell">
+    <div className="dash-shell">
       <Sidebar />
-      <main className="main-content">{children}</main>
+      <main className="dash-content">{children}</main>
     </div>
   );
 }
